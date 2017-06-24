@@ -1,0 +1,37 @@
+<div *ngIf="leagueData;else otherLoading">
+  <h2 md-dialog-title>{{leagueData.leagueCaption}} <br><small><b>Match Day : </b>{{leagueData.matchday}}</small></h2>
+  <md-dialog-actions class="fab-fixed">
+    <button md-fab md-dialog-close><md-icon>clear</md-icon></button>
+  </md-dialog-actions>
+  <md-dialog-content>
+    <table>
+      <thead>
+        <tr>
+          <th>NO.</th>
+          <th>Logo</th>
+          <th>Team</th>
+          <th>Point</th>
+          <th>Goals</th>
+          <th>Play</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of leagueData.standing">
+          <td>{{item.rank}}</td>
+          <td>
+            <img src="{{item.crestURI}}" style="width:50px;">
+          </td>
+          <td>{{item.team}}</td>
+          <td>{{item.points}}</td>
+          <td>{{item.goals}}</td>
+          <td>{{item.playedGames}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </md-dialog-content>
+
+</div>
+
+<ng-template #otherLoading>
+  <md-spinner class="spiner-center"></md-spinner>
+</ng-template>

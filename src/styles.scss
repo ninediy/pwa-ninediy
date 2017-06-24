@@ -1,1 +1,126 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+*{
+    font-family: 'Helvetica Neue';
+}
+body{
+    margin: 0;
+}
+.spiner-center{
+    margin: auto;
+}
+
+.mat-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.mat-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-sidenav {
+  padding: 20px;
+  width: 40vh;
+}
+
+.mat-icon {
+  padding: 0 14px;
+}
+
+.mat-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-list-btn{
+    width: 100%;
+    text-align: left !important;
+}
+
+.mat-content{
+    padding: 9px;
+}
+
+.mat-full-form{
+    width: 100%;
+}
+
+md-card{
+    margin-top: 5px;
+}
+.mat-dialog-container{
+    max-width: 100% !important;
+}
+
+table{
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    thead{
+        border-bottom: 1px solid #eee;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    tr{
+        td,th{
+            text-align: center
+        }
+    }
+}
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+@media screen and (max-width: 580px) {
+  .table {
+    display: block;
+  }
+}
+
+.row {
+  display: table-row;
+  background: #f6f6f6;
+}
+.row:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+.row.header {
+  font-weight: 900;
+  color: #ffffff;
+  background: #ea6153;
+}
+.row.green {
+  background: #27ae60;
+}
+.row.blue {
+  background: #2980b9;
+}
+@media screen and (max-width: 580px) {
+  .row {
+    padding: 8px 0;
+    display: block;
+  }
+}
+
+.cell {
+  padding: 6px 12px;
+  display: table-cell;  
+}
+
+.text-head{
+      display: none;
+  }
+@media screen and (max-width: 580px) {
+  .cell {
+    padding: 2px 12px;
+    display: block;
+    .text-head{
+        display: block;
+    }
+  }
+}
