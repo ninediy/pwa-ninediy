@@ -44,14 +44,15 @@ body{
 }
 
 .mat-full-form{
-    width: 100%;
+    width: 100% !important;
 }
 
 md-card{
     margin-top: 5px;
 }
 .mat-dialog-container{
-    max-width: 100% !important;
+    max-width: 90vh !important;
+    margin:auto;
 }
 
 table{
@@ -71,7 +72,7 @@ table{
 }
 
 .table {
-  margin: 0 0 40px 0;
+  margin: 0;
   width: 100%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   display: table;
@@ -123,4 +124,7 @@ table{
         display: block;
     }
   }
+}
+.page-header{
+  border-bottom: 1px solid #eee;
 }

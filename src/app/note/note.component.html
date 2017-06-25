@@ -1,3 +1,15 @@
-<p>
-  note works!
-</p>
+<div class="mat-content">
+  <md-card *ngFor="let item of myNote | orderby:'-id'">
+    <md-card-title>
+      <small>{{item.created_at | date}}</small>
+    </md-card-title>
+    <md-card-content>
+      <p class="text-break">
+        {{item.content}}
+      </p>
+    </md-card-content>
+  </md-card>
+</div>
+<button md-fab class="fab-fixed">
+    <md-icon (click)="openDialog()" >add</md-icon>
+</button>

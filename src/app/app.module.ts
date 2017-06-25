@@ -22,7 +22,9 @@ import {
   MdTabsModule,
   MdProgressSpinnerModule,
   MdSelectModule,
-  MdDialogModule
+  MdDialogModule,
+  MdInputModule,
+  MdGridListModule
 } from '@angular/material';
 
 import 'hammerjs';
@@ -32,6 +34,8 @@ import { NoteComponent } from './note/note.component';
 import { LeagueListComponent } from './league-list/league-list.component';
 import { LeagueDetailComponent } from './league-detail/league-detail.component';
 import { DialogLeagueDetailComponent } from './dialog/dialog-league-detail/dialog-league-detail.component';
+import { NoteFormComponent } from './dialog/note-form/note-form.component';
+import { OrderByPipe } from './order-by-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,9 @@ import { DialogLeagueDetailComponent } from './dialog/dialog-league-detail/dialo
     NoteComponent,
     LeagueListComponent,
     LeagueDetailComponent,
-    DialogLeagueDetailComponent
+    DialogLeagueDetailComponent,
+    NoteFormComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
@@ -61,10 +67,13 @@ import { DialogLeagueDetailComponent } from './dialog/dialog-league-detail/dialo
     MdTabsModule,
     MdProgressSpinnerModule,
     MdSelectModule,
-    MdDialogModule
+    MdDialogModule,
+    MdInputModule,
+    MdGridListModule
   ],
   entryComponents: [
-    DialogLeagueDetailComponent
+    DialogLeagueDetailComponent,
+    NoteFormComponent
   ],
   providers: [FootballService],
   bootstrap: [AppComponent]
