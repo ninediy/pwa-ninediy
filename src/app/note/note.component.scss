@@ -1,0 +1,13 @@
+.fab-fixed{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+.mat-content{
+    min-height: 80vh
+}
+
+.text-break{
+    word-break: break-all;
+}

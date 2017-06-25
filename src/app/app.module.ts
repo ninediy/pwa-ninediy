@@ -22,7 +22,9 @@ import {
   MdTabsModule,
   MdProgressSpinnerModule,
   MdSelectModule,
-  MdDialogModule
+  MdDialogModule,
+  MdInputModule,
+  MdGridListModule
 } from '@angular/material';
 
 import 'hammerjs';
@@ -30,8 +32,10 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { LeagueComponent } from './league/league.component';
 import { NoteComponent } from './note/note.component';
 import { LeagueListComponent } from './league-list/league-list.component';
-import { LeagueDetailComponent } from './league-detail/league-detail.component';
 import { DialogLeagueDetailComponent } from './dialog/dialog-league-detail/dialog-league-detail.component';
+import { NoteFormComponent } from './dialog/note-form/note-form.component';
+import { OrderByPipe } from './order-by-pipe.pipe';
+import { TeamDetailComponent } from './team-detail/team-detail.component';
 
 @NgModule({
   declarations: [
@@ -41,8 +45,10 @@ import { DialogLeagueDetailComponent } from './dialog/dialog-league-detail/dialo
     LeagueComponent,
     NoteComponent,
     LeagueListComponent,
-    LeagueDetailComponent,
-    DialogLeagueDetailComponent
+    DialogLeagueDetailComponent,
+    NoteFormComponent,
+    OrderByPipe,
+    TeamDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -61,10 +67,13 @@ import { DialogLeagueDetailComponent } from './dialog/dialog-league-detail/dialo
     MdTabsModule,
     MdProgressSpinnerModule,
     MdSelectModule,
-    MdDialogModule
+    MdDialogModule,
+    MdInputModule,
+    MdGridListModule
   ],
   entryComponents: [
-    DialogLeagueDetailComponent
+    DialogLeagueDetailComponent,
+    NoteFormComponent
   ],
   providers: [FootballService],
   bootstrap: [AppComponent]

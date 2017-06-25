@@ -1,0 +1,50 @@
+<md-card class="example-card" *ngIf="TeamData;else loadingTemplate">
+  <md-card-header>
+    <div md-card-avatar>
+      <md-icon>assignment ind</md-icon>
+    </div>
+    <md-card-title>{{TeamData.name}}</md-card-title>
+    <md-card-subtitle>{{TeamData.shortName}}</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image src="{{TeamData.crestUrl}}" class="img-responsive img-center">
+  <md-card-content>
+    <p>
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button><md-icon>favorite</md-icon>Favorite</button>
+  </md-card-actions>
+</md-card>
+
+<md-card *ngIf="PlayerData;else loadingTemplate">
+  <md-card-header>
+    <md-card-title>Player of Team</md-card-title>
+    <md-card-subtitle>{{PlayerData.count}} player.</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <md-list>
+      <table>
+        <thead>
+          <tr>
+            <th>NUMBER</th>
+            <th>NAME</th>
+            <th>Nationaly</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of PlayerData.players">
+            <td>{{item.jerseyNumber}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.nationality}}</td>
+            <td>{{item.position}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-list>
+  </md-card-content>
+</md-card>
+
+<ng-template #loadingTemplate>
+  <md-spinner class="spiner-center"></md-spinner>
+</ng-template>
