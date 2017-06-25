@@ -3,6 +3,7 @@ import { Competition } from '../models/Competition';
 import { FootballService } from '../services/football.service';
 import { MdDialog } from '@angular/material';
 import { DialogLeagueDetailComponent } from '../dialog/dialog-league-detail/dialog-league-detail.component';
+import { MdSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-league-list',
@@ -17,7 +18,10 @@ export class LeagueListComponent implements OnInit {
     Season: this.default_season
   };
 
-  constructor(private footballService: FootballService, private dialog: MdDialog) { }
+  constructor(
+    private footballService: FootballService,
+    private dialog: MdDialog,
+    private snackBar: MdSnackBar) { }
 
   ngOnInit(): void {
     this.doGetCompetitions(this.default_season);
@@ -28,6 +32,7 @@ export class LeagueListComponent implements OnInit {
     this.footballService.getCompetitions(season)
       .subscribe((resp) => {
         this.competitions = resp;
+        this.openSnackBar('เลือกลีกที่ต้องการดูข้อมูล','Tips');
       });
   }
 
@@ -56,7 +61,14 @@ export class LeagueListComponent implements OnInit {
     });
   }
 
-  closeDialog(){
+  closeDialog() {
     this.dialog.closeAll();
+  }
+
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 }

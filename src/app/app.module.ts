@@ -24,7 +24,8 @@ import {
   MdSelectModule,
   MdDialogModule,
   MdInputModule,
-  MdGridListModule
+  MdGridListModule,
+  MdSnackBarModule
 } from '@angular/material';
 
 import 'hammerjs';
@@ -69,7 +70,8 @@ import { TeamDetailComponent } from './team-detail/team-detail.component';
     MdSelectModule,
     MdDialogModule,
     MdInputModule,
-    MdGridListModule
+    MdGridListModule,
+    MdSnackBarModule
   ],
   entryComponents: [
     DialogLeagueDetailComponent,
