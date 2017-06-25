@@ -23,7 +23,7 @@ export class NoteComponent implements OnInit {
 
   ngOnInit(): void {
     this.doGetMyNote();
-    this.openSnackBar('คุณสามารถใช้ Note ในโหมด offline ได้','tips');
+    this.openSnackBar('คุณสามารถใช้ Note ในโหมด offline ได้', 'tips');
   }
 
   doGetMyNote(): void {
