@@ -101,6 +101,20 @@ export class FootballService {
     }
   }
 
+  saveFavTeamID(team_id: number): Boolean {
+    window.localStorage.setItem('fav_team_id', team_id.toString());
+    return true;
+  }
+
+  getFaveTeamID(): number {
+    let team_id = window.localStorage.getItem('fav_team_id');
+    if (team_id) {
+      return +team_id;
+    }else{
+      return null;
+    }
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FootballService } from '../services/football.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
+import { MdSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-team-detail',
@@ -17,7 +18,8 @@ export class TeamDetailComponent implements OnInit {
   constructor(
     private footballservice: FootballService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private snackBar:MdSnackBar
   ) { }
 
   ngOnInit() {
@@ -50,6 +52,19 @@ export class TeamDetailComponent implements OnInit {
       player.subscribe((resp) => {
         this.PlayerData = resp;
       });
+    }
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
+
+  doSaveFavTeam() {
+    let team_id = +this.team_id;
+    if(this.footballservice.saveFavTeamID(team_id)){
+      this.openSnackBar('บันทึกสำเร็จ','Saved');
     }
   }
 
