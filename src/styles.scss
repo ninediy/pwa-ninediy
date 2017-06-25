@@ -2,6 +2,14 @@
 *{
     font-family: 'Helvetica Neue';
 }
+img{
+  &.img-responsive{
+    width: 100%;
+  }
+  &.img-center{
+    margin:auto;
+  }
+}
 body{
     margin: 0;
 }
@@ -127,4 +135,54 @@ table{
 }
 .page-header{
   border-bottom: 1px solid #eee;
+}
+
+
+table{
+  thead{
+    tr{
+      border-bottom: 1px solid #eee;
+      th{
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+  tbody{
+    tr{
+      &:nth-child(even){
+          background-color: #eee;
+      }
+      td{
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    }
+  }
+}
+
+h3{
+  small{
+    font-size:12px;
+    color:#ccc;
+  }
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+md-card{
+  md-card-header{
+    border-bottom: 1px solid #eee;
+  }
+}
+md-list{
+  md-list-item{
+    width: 100%;
+    height: auto;
+    min-height: 80px;
+    line-height: 20px;
+    padding-top: 20px;
+  }
 }

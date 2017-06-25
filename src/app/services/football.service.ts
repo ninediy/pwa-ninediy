@@ -8,7 +8,9 @@ export class FootballService {
   private league_id: number = 0;
   private API = {
     GET_COMPETITION: '/competitions/',
-    GET_LEAGUE_TABLE: `/leagueTable`
+    GET_LEAGUE_TABLE: '/leagueTable',
+    GET_TEAM_DATA: '/teams/',
+    GET_TEAM_PLAYER: '/players'
   };
   private headers: Headers;
 
@@ -59,13 +61,44 @@ export class FootballService {
   }
 
   getLeagueTable(league_id) {
-    this.league_id = league_id;
-    let url = `${this.BASE_API}${this.API.GET_COMPETITION}${this.league_id}${this.API.GET_LEAGUE_TABLE}`;
-    return this.http.get(url, {
-      headers: this.headers
-    }).debounceTime(300).map(
-      (resp) => resp.json()
-      );
+    if (league_id) {
+      this.league_id = league_id;
+      let url = `${this.BASE_API}${this.API.GET_COMPETITION}${this.league_id}${this.API.GET_LEAGUE_TABLE}`;
+      return this.http.get(url, {
+        headers: this.headers
+      }).debounceTime(300).map(
+        (resp) => resp.json()
+        );
+    } else {
+      return null;
+    }
+
+  }
+
+  getTeamDetail(team_id: number) {
+    if (team_id) {
+      let url = `${this.BASE_API}${this.API.GET_TEAM_DATA}${team_id}`;
+      return this.http.get(url, {
+        headers: this.headers
+      }).debounceTime(300).map(
+        (resp) => resp.json()
+        );
+    } else {
+      return null;
+    }
+  }
+
+  getTeamPlayer(team_id: number) {
+    if (team_id) {
+      let url = `${this.BASE_API}${this.API.GET_TEAM_DATA}${team_id}${this.API.GET_TEAM_PLAYER}`
+      return this.http.get(url, {
+        headers: this.headers
+      }).debounceTime(300).map(
+        (resp) => resp.json()
+        );
+    } else {
+      return null;
+    }
   }
 
   private handleError(error: any): Promise<any> {

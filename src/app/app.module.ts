@@ -32,10 +32,10 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { LeagueComponent } from './league/league.component';
 import { NoteComponent } from './note/note.component';
 import { LeagueListComponent } from './league-list/league-list.component';
-import { LeagueDetailComponent } from './league-detail/league-detail.component';
 import { DialogLeagueDetailComponent } from './dialog/dialog-league-detail/dialog-league-detail.component';
 import { NoteFormComponent } from './dialog/note-form/note-form.component';
 import { OrderByPipe } from './order-by-pipe.pipe';
+import { TeamDetailComponent } from './team-detail/team-detail.component';
 
 @NgModule({
   declarations: [
@@ -45,10 +45,10 @@ import { OrderByPipe } from './order-by-pipe.pipe';
     LeagueComponent,
     NoteComponent,
     LeagueListComponent,
-    LeagueDetailComponent,
     DialogLeagueDetailComponent,
     NoteFormComponent,
-    OrderByPipe
+    OrderByPipe,
+    TeamDetailComponent
   ],
   imports: [
     BrowserModule,
