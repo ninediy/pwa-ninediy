@@ -1,4 +1,4 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 *{
     font-family: 'Helvetica Neue';
 }
@@ -134,14 +134,14 @@ table{
   }
 }
 .page-header{
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #333;
 }
 
 
 table{
   thead{
     tr{
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #333;
       th{
         padding-top: 10px;
         padding-bottom: 10px;
@@ -151,7 +151,7 @@ table{
   tbody{
     tr{
       &:nth-child(even){
-          background-color: #eee;
+          background-color: #333;
       }
       td{
         padding-top: 5px;
